@@ -1,12 +1,12 @@
 const help = (prefix) => {
 	return `
-┏━━❉ *About Bot* ❉━━┓
+┏━━❉ *Sobre o Bot* ❉━━┓
 ┣⊱ *${prefix}owner*
 ┣⊱ *${prefix}donasi*
 ┣⊱ *${prefix}info*
 ┣⊱ *${prefix}botstat*
 ┣⊱ *${prefix}bug*
-┣━━❀ *Maker* ❀━━
+┣━━❀ *Criador* ❀━━
 ┣⊱ *${prefix}ocr*
 ┣⊱ *${prefix}sticker*
 ┣⊱ *${prefix}tts*
@@ -16,12 +16,12 @@ const help = (prefix) => {
 ┣⊱ *${prefix}ninjalogo*
 ┣⊱ *${prefix}glitch*
 ┣⊱ *${prefix}text3d*
-┣━━❀ *Kerang ajaib* ❀━
+┣━━❀ *Conchas mágicas* ❀━
 ┣⊱ *${prefix}kapankah*
 ┣⊱ *${prefix}apakah*
 ┣⊱ *${prefix}bisakah*
 ┣⊱ *${prefix}rate*
-┣━━❀ *Fun* ❀━━━━
+┣━━❀ *Divertido* ❀━━━━
 ┣⊱ *${prefix}meme*
 ┣⊱ *${prefix}memeindo*
 ┣⊱ *${prefix}hilih*
@@ -43,7 +43,7 @@ const help = (prefix) => {
 ┣━━❀ *Media* ❀━━
 ┣⊱ *${prefix}tiktokstalk*
 ┣⊱ *${prefix}ytmp4*
-┣━━❀ *Other* ❀━━
+┣━━❀ *Outros* ❀━━
 ┣⊱ *${prefix}ping*
 ┣⊱ *${prefix}shorturl*
 ┣⊱ *${prefix}fototiktok*
@@ -63,7 +63,7 @@ const help = (prefix) => {
 ┣⊱ *${prefix}ssweb*
 ┣⊱ *${prefix}anjing*
 ┣⊱ *${prefix}indohot*
-┣━━❀ *Group* ❀━━
+┣━━❀ *Grupo* ❀━━
 ┣⊱ *${prefix}linkgc*
 ┣⊱ *${prefix}tagall*
 ┣⊱ *${prefix}add* [+62xx]
@@ -75,7 +75,7 @@ const help = (prefix) => {
 ┣⊱ *${prefix}simih* [1/0]
 ┣⊱ *${prefix}nsfw* [1/0]
 ┣⊱ *${prefix}welcome* [1/0]
-┣━━❀ *Owner bot* ❀━
+┣━━❀ *Proprietário* ❀━
 ┣⊱ *${prefix}clearall*
 ┣⊱ *${prefix}block*
 ┣⊱ *${prefix}unblock*
@@ -84,7 +84,7 @@ const help = (prefix) => {
 ┣⊱ *${prefix}setpp*
 ┣⊱ *${prefix}setprefix*
 ┣━━━━━━━━━━━━━━
-┃    *BOT BY AFFIS*
+┃    *BOT BY ICARO*
 ┗━━━━━━━━━━━━━━
 
 `
