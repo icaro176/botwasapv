@@ -33,7 +33,7 @@ const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
             + 'FN:Affis Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=5579988645802:+55 79 98864-5802\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=557988645802:+55 79 8864-5802\n' 
             + 'END:VCARD' 
 prefix = '#'
 blocked = []          
@@ -48,7 +48,7 @@ const bulan = arrayBulan[moment().format('MM') - 1]
 const config = {
     XBOT: '❉Bot do Icaroksjs❉', 
     instagram: 'Comming soon', 
-    nomer: 'wa.me/5579988645802',
+    nomer: 'wa.me/557988645802',
     youtube: 'Não Tem', 
     whatsapp: 'Comming soon', 
     tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
@@ -167,7 +167,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["5579988645802@s.whatsapp.net"] 
+			const ownerNumber = ["557988645802@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -265,7 +265,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Nama bot* : ${me.name}\n*OWNER* : *AMPIBI*\n*AUTHOR* : AMPIBI\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
+					teks = `*Nome do Bot* : ${me.name}\n*PROPRIETÁRIO* : *Icaro*\n*AUTOR* : ICARO\n*Número do Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contato* : ${blocked.length}\n*O Bot Está Ativo Desde* : ${kyun(uptime)}`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
@@ -299,12 +299,12 @@ client.on('group-participants-update', async (anu) => {
 					var quote = gh.split("|")[0];
 					var wm = gh.split("|")[1];
 					var bg = gh.split("|")[2];
-					const pref = `Usage: \n${prefix}quotemaker Texto|Marca D'água|Tema\n\nEx :\n${prefix}quotemaker ini contoh|bicit|random`
+					const pref = `Use: \n${prefix}quotemaker Texto|Marca D'água|Tema\n\nEx :\n${prefix}quotemaker ini vsfd|[vc bota oque quiser]|random`
 					if (args.length < 1) return reply(pref)
 					reply(mess.wait)
 					anu = await fetchJson(`https://terhambar.com/aw/qts/?kata=${quote}&author=${wm}&tipe=${bg}`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image, {caption: 'Nih anjim', quoted: mek})
+					client.sendMessage(from, buffer, image, {caption: 'Pronto Mlk', quoted: mek})
 					break
                  case 'phlogo':
 					var gh = body.slice(9)
@@ -331,7 +331,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'waifu':
 				   anu = await fetchJson(`https://arugaz.herokuapp.com/api/waifu`)
 				   buf = await getBuffer(anu.image)
-				   texs = ` *Nome do Anime* : ${anu.name} \n*deskripsi* : ${anu.desc} \n*source* : ${anu.source}`
+				   texs = ` *Nome do Anime* : ${anu.name} \n*descrição (em língua Indonésia msm fds)* : ${anu.desc} \n*source* : ${anu.source}`
 				   client.sendMessage(from, buf, image, { quoted: mek, caption: `${texs}`})
 				break
 				case 'anime':
@@ -352,14 +352,14 @@ client.on('group-participants-update', async (anu) => {
                  break
                 case 'bug':
                      const pesan = body.slice(5)
-                      if (pesan.length > 300) return client.sendMessage(from, 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks', msgType.text, {quoted: mek})
+                      if (pesan.length > 300) return client.sendMessage(from, 'Desculpe, o texto é muito longo, máximo de 300 texto', msgType.text, {quoted: mek})
                         var nomor = mek.participant
-                       const teks1 = `*[REPORT]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}`
+                       const teks1 = `*[REPORT]*\nNome : @${nomor.split("@s.whatsapp.net")[0]}\nBug : ${pesan}`
                       var options = {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('5579988645802@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('557988645802@s.whatsapp.net', options, text, {quoted: mek})
                     reply('Problemas foram relatados ao proprietário do BOT, relatórios falsos não serão respondidos.')
                     break
                 case 'ssweb':
@@ -428,7 +428,7 @@ client.on('group-participants-update', async (anu) => {
                    if (!isNsfw) return reply('NSFW não está ativo')
                    anu = await fetchJson(`https://arugaz.herokuapp.com/api/indohot`, {method: 'get'})
                    if (anu.error) return reply(anu.error)
-                   hasil = `*judul* \n${anu.result.judul} *genre* \n${anu.result.genre} *durasi* \n${anu.result.durasi} *url* \n${anu.result.url}`
+                   hasil = `*Título* \n${anu.result.judul} *gênero* \n${anu.result.genre} *duração* \n${anu.result.durasi} *url* \n${anu.result.url}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
 				case 'ytmp4':
@@ -436,7 +436,7 @@ client.on('group-participants-update', async (anu) => {
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					teks = `*Title* : ${anu.title}`
+					teks = `*Título* : ${anu.title}`
 					thumb = await getBuffer(anu.thumb)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result)
@@ -445,7 +445,7 @@ client.on('group-participants-update', async (anu) => {
                 case 'text3d':
               	    if (args.length < 1) return reply('Onde está o texto, irmão?')
                     teks = `${body.slice(8)}`
-                    if (teks.length > 10) return client.sendMessage(from, 'Teksnya kepanjangan, Maksimal 10 kalimat', text, {quoted: mek})
+                    if (teks.length > 10) return client.sendMessage(from, 'O texto é longo, no máximo 10 letras fdp', text, {quoted: mek})
                     buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -463,12 +463,12 @@ client.on('group-participants-update', async (anu) => {
                 case 'kbbi':
 					if (args.length < 1) return reply('O que você quer procurar?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/kbbi?search=${body.slice(6)}`, {method: 'get'})
-					reply('Menurut Kbbi:\n\n'+anu.result)
+					reply('De acordo com Kbbi:\n\n'+anu.result)
 					break
                 case 'artinama':
 					if (args.length < 1) return reply('O que você quer procurar?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/arti?nama=${body.slice(10)}`, {method: 'get'})
-					reply('Menurut nama:\n\n'+anu.result)
+					reply('Pelo Nome:\n\n'+anu.result)
 					break
 				case 'ocr': 
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
@@ -564,7 +564,7 @@ client.on('group-participants-update', async (anu) => {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
 							buff = fs.readFileSync(rano)
-							if (err) return reply('Bem falhou ;(, tente repetir ^_^')
+							if (err) return reply('Bem falhou ;( , tente repetir ^_^')
 							client.sendMessage(from, buff, audio, {quoted: mek, ptt:true})
 							fs.unlinkSync(rano)
 						})
@@ -586,7 +586,7 @@ client.on('group-participants-update', async (anu) => {
 						if (args.length < 1) return client.sendMessage(from, 'qual nome de usuário?', text, {quoted: mek})
 						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
 						reply(mess.wait)
-						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
+						teks = `*ID* : ${user.id}\n*Nome de Usuário* : ${user.uniqueId}\n*Apelido* : ${user.nickname}\n*Seguidores* : ${stats.followerCount}\n*Seguindo* : ${stats.followingCount}\n*Postagens* : ${stats.videoCount}\n*Amor* : ${stats.heart}\n`
 						buffer = await getBuffer(user.avatarLarger)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
 					} catch (e) {
@@ -696,7 +696,7 @@ client.on('group-participants-update', async (anu) => {
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					if (args[0] === 'buka') {
-					    reply(`Feito isso?? Abra o Grupo Todo`)
+					    reply(`Grupo Aberto com Sucesso`)
 						client.groupSettingChange(from, GroupSettingChange.messageSend, false)
 					} else if (args[0] === 'tutup') {
 						reply(`Grupo Fechado com Sucesso`)
@@ -708,7 +708,7 @@ client.on('group-participants-update', async (anu) => {
             case 'owner':
             case 'creator':
                   client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-       client.sendMessage(from, 'Tuh nomer owner ku >_<, jangan spam atau ku block kamu',MessageType.text, { quoted: mek} )
+       client.sendMessage(from, 'Este é o número do meu proprietário >_<, não envie spam ou eu te bloqueio',MessageType.text, { quoted: mek} )
            break    
            case 'setname':
                 if (!isGroup) return reply(mess.only.group)
@@ -892,7 +892,7 @@ client.on('group-participants-update', async (anu) => {
 						console.log(muehe)
 						reply(muehe)
 					} else {
-						console.log(color('[ERROR]','red'), 'Unregistered Command from', color(sender.split('@')[0]))
+						console.log(color('[ERROR]','red'), 'Comando não registrado de', color(sender.split('@')[0]))
 					}
 					}
 		} catch (e) {
