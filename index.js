@@ -431,7 +431,7 @@ client.on('group-participants-update', async (anu) => {
                    hasil = `*Título* \n${anu.result.judul} *gênero* \n${anu.result.genre} *duração* \n${anu.result.durasi} *url* \n${anu.result.url}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
-				case 'ytmp4':
+			        case 'ytmp4':
 					if (args.length < 1) return reply('Onde está o url, hum?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
@@ -441,6 +441,18 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
+					break
+
+                               case 'yt2mp3':
+					if (args.length < 1) return reply('CADE A PRR DA URL??')
+					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/yta?url=${args[0]}&apiKey=${apiKey}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					teks = `*Title* : ${anu.title}\n*Filesize* : ${anu.filesize}`
+					thumb = await getBuffer(anu.thumb)
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
 					break
                 case 'text3d':
               	    if (args.length < 1) return reply('Onde está o texto, irmão?')
