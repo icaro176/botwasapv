@@ -43,7 +43,7 @@ blocked = []
 /********** END FILE ***************/
   
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
-const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+const arrayBulan = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 const bulan = arrayBulan[moment().format('MM') - 1]
 const config = {
     XBOT: '❉Bot do Icaroksjs❉', 
@@ -331,7 +331,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'waifu':
 				   anu = await fetchJson(`https://arugaz.herokuapp.com/api/waifu`)
 				   buf = await getBuffer(anu.image)
-				   texs = ` *Nome do Anime* : ${anu.name} \n*descrição (em língua Indonésia msm fds)* : ${anu.desc} \n*source* : ${anu.source}`
+				   texs = ` *Nome do Anime* : ${anu.name} \n*descrição* : ${anu.desc} \n*source* : ${anu.source}`
 				   client.sendMessage(from, buf, image, { quoted: mek, caption: `${texs}`})
 				break
 				case 'anime':
@@ -443,7 +443,7 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
 					break
 
-                               case 'yt2mp3':
+                                        case 'yt2mp3':
 					if (args.length < 1) return reply('CADE A PRR DA URL??')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/yta?url=${args[0]}&apiKey=${apiKey}`, {method: 'get'})
