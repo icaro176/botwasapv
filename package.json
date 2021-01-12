@@ -36,7 +36,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/icaro176/botwasapv9/.git"
+    "url": "git+https://github.com/icaro176/botwasapv8/.git"
   },
   "keywords": [
     "k"
@@ -44,7 +44,7 @@
   "author": "Abdul Muttaqin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/icaro176/botwasapv9/issues"
+    "url": "https://github.com/icaro176/botwasapv8/issues"
   },
-  "homepage": "https://github.com/icaro176/botwasapv9/readme"
+  "homepage": "https://github.com/icaro176/botwasapv8/readme"
 }
